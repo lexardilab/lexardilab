@@ -6,8 +6,8 @@ import { useState } from "react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="flex items-center justify-between px-8 bg-slate-200">
-      <div className="w-full ">
+    <nav className="flex items-center justify-between px-8 border-2 border-b border-black bg-slate-100">
+      <div className="">
         <Link href="/">
           <Image
             className="py-6"
@@ -19,7 +19,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div
-        className={`fixed top-0 left-0 h-screen w-screen transform z-50 bg-slate-300 px-12   ${
+        className={`fixed top-0 left-0 h-screen w-screen transform z-50 bg-slate-100 px-12   ${
           open ? "-translate-y-0" : "-translate-y-full"
         } transition-transform duration-500 ease-in-out `}
       >
@@ -71,8 +71,10 @@ export default function Navbar() {
         </div>
         <div className="absolute right-12 bottom-6">
           <div>
-            <Link href="mailto:harridui.studio@gmail.com">
-              <p className="text-xl font-bold font-mont">kaixo@harridui.com </p>
+            <Link href="mailto:lexardi.lab@gmail.com">
+              <p className="text-xl font-bold font-mont">
+                kaixo@lexardilab.com{" "}
+              </p>
             </Link>
           </div>
         </div>
@@ -87,13 +89,13 @@ export default function Navbar() {
         >
           {/* hamburger button */}
           <span
-            className={`h-0.5 w-full bg-black transform transition duration-300 ease-in-out bg-[#d4866e] ${
+            className={`h-0.5 w-full transform transition duration-300 ease-in-out bg-[#f2d072] ${
               open ? "rotate-45 translate-y-2" : ""
             }`}
           />
 
           <span
-            className={`h-0.5 w-full bg-black transform transition duration-300 ease-in-out bg-[#d4866e] ${
+            className={`h-0.5 w-full  transform transition duration-300 ease-in-out bg-[#f2d072] ${
               open ? "-rotate-45 -translate-y-0.5" : ""
             }`}
           />

@@ -3,6 +3,9 @@ import { category } from "./schemaTypes/category";
 import { post } from "./schemaTypes/post";
 import { author } from "./schemaTypes/author";
 import { product } from "./schemaTypes/product";
+import { camiseta } from "./schemaTypes/camiseta";
+import { sudadera } from "./schemaTypes/sudadera";
+
 export const schema = {
-  types: [post, author, category, blockContent, product],
+  types: [post, author, category, blockContent, product, camiseta, sudadera],
 };

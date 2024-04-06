@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Card from "../components/Card";
-import { getAllProducts } from "../../../sanity/lib/product-util";
+import CamisetaCard from "../components/CamisetaCard";
+import { getAllCamisetas } from "../../../sanity/lib/camiseta-util";
 
-function Products() {
+function Camisetas() {
   const [data, setData] = useState([]);
   const [minPrice, setMinPrice] = useState("");
   const [sortBy, setSortBy] = useState("latest");
@@ -13,7 +13,7 @@ function Products() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const products = await getAllProducts();
+      const products = await getAllCamisetas();
       setData(products);
     };
     fetchData();
@@ -65,24 +65,24 @@ function Products() {
 
   const fetchData = async () => {
     const products = await getAllProducts();
-    setData(products);
+    setData(camisetas);
   };
 
   // Logic for displaying current products
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentCamisetas = data.slice(indexOfFirstProduct, indexOfLastProduct);
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="grid h-screen grid-cols-4 bg-slate-100">
-      {currentProducts?.map((product) => (
-        <Card key={product._id} product={product} />
+      {currentCamisetas?.map((camiseta) => (
+        <CamisetaCard key={camiseta._id} camiseta={camiseta} />
       ))}
     </div>
   );
 }
 
-export default Products;
+export default Camisetas;
