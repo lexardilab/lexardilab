@@ -8,7 +8,7 @@ function Camiseta({ camiseta }) {
     <div className="">
       <div className="grid grid-cols-4 ">
         <div className="">
-          <img src={selectedImage} width="600" height="400" alt="art" />
+          <img src={selectedImage} width="800" height="400" alt="art" />
         </div>
       </div>
       <div className="flex items-center">

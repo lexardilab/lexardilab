@@ -2,6 +2,10 @@
 import React, { useState } from "react";
 import useCartStore from "../cartStore";
 import { toast } from "react-hot-toast";
+import { MdChevronRight } from "react-icons/md";
+import { HiOutlinePlusSmall } from "react-icons/hi2";
+import { HiArrowSmallRight } from "react-icons/hi2";
+import Link from "next/link";
 
 function Details({ product }) {
   const [selectedImage, setSelectedImage] = useState(product?.image);
@@ -14,66 +18,115 @@ function Details({ product }) {
     addToCart({ product, quantity: qty });
     toast.success("Added to cart");
   };
+  const MyLink = React.forwardRef(
+    (
+      { as, children, href, replace, scroll, shallow, passHref, ...rest }, // extract all next/link props and pass the rest to the anchor tag
+      ref
+    ) => (
+      <Link as={as} href={href} passHref={passHref} replace={replace}>
+        <href {...rest} ref={ref}>
+          {children}
+        </href>
+      </Link>
+    )
+  );
+
+  const Arrow = () => {
+    const [isHovering, setIsHovered] = useState(false);
+    const onMouseEnter = () => setIsHovered(true);
+    const onMouseLeave = () => setIsHovered(false);
+    return (
+      <div
+        className="flex items-center flex-shrink-0 cursor-pointer"
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <MyLink href="/">
+          {isHovering ? <HiOutlinePlusSmall /> : <HiArrowSmallRight />}
+        </MyLink>
+      </div>
+    );
+  };
 
   return (
-    <div className="">
-      <div className="grid grid-cols-4 ">
-        <div className="">
-          <img src={selectedImage} width="600" height="400" alt="art" />
+    <>
+      <div className="grid grid-cols-4">
+        <div className="flex">
+          <img src={selectedImage} width="800" height="600" alt="producto" />
+          {product?.extraImages?.map((image) => (
+            <img src={image} width="800" height="600" alt="Gallery" />
+          ))}
         </div>
       </div>
-      <div className="flex items-center">
-        <div className="flex items-center px-4 py-8">
-          <h1 className="pr-24 text-4xl">{product?.name}</h1>
-          <span className="text-4xl">{product?.price} €</span>
+      <div className="grid grid-cols-2 ">
+        <div className="flex items-center px-1">
+          <h1 className="text-2xl pr-36">{product?.name}</h1>
+          <span className="text-2xl text-right">{product?.price} €</span>
         </div>
 
-        <div className="flex justify-end">
-          <button className="text-4xl " onClick={handleAddToCart}>
+        <div className="flex justify-end px-1">
+          <button className="text-2xl " onClick={handleAddToCart}>
             Añadir a la cesta
           </button>
         </div>
       </div>
+      <div className="grid grid-cols-2 py-6">
+        <div className="flex items-center px-1">
+          <h1 className="text-base pr-36">Color:</h1>
+          <span className="text-base text-right">Talla:</span>
+        </div>
 
-      {/* Below Main Image - Small Image List */}
-      <div className="mt-2">
-        <ul className="flex gap-4 overflow-x-auto">
-          <li
-            onClick={() => {
-              setSelectedImage(product?.image);
-            }}
-            className={`${
-              selectedImage == product?.image ? "border-4 border-[#5b20b6]" : ""
-            } w-20 relative overflow-hidden aspect-ratio-1 cursor-pointer hover:border-4 border-[#5b20b6]`}
-          >
-            <img
-              src={product?.image}
-              layout="fill"
-              objectfit="cover"
-              alt="small_art1"
-            />
-          </li>
-          {product?.extraImages?.map((image) => (
-            <li
-              key={image}
-              onClick={() => {
-                setSelectedImage(image);
-              }}
-              className={`${
-                selectedImage == image ? "" : ""
-              } w-20 relative overflow-hidden aspect-ratio-1 cursor-pointer hover:border-4 border-[#5b20b6]`}
-            >
-              <img
-                src={image}
-                layout="fill"
-                objectfit="cover"
-                alt="small_art1"
-              />
-            </li>
-          ))}
-        </ul>
+        <div className="flex justify-end px-1"></div>
       </div>
-    </div>
+      <div className="grid grid-cols-2 py-6">
+        <div className="px-1 ">
+          <h1 className="font-mono text-xs pr-36">Ref: {product?.ref} </h1>
+        </div>
+
+        <div className="px-1 ">
+          <div className="flex items-center">
+            <span>
+              <Arrow />
+            </span>
+            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
+              Composición
+            </h1>
+          </div>
+          <div className="flex items-center">
+            <span>
+              <Arrow />
+            </span>
+            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
+              Descripción
+            </h1>
+          </div>
+          <div className="flex items-center">
+            <span>
+              <Arrow />
+            </span>
+            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
+              Guia de tallas
+            </h1>
+          </div>
+          <div className="flex items-center">
+            <span>
+              <Arrow />
+            </span>
+            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
+              Envios y devoluciones
+            </h1>
+          </div>
+          <div className="flex items-center">
+            <span>
+              <Arrow />
+            </span>
+            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
+              Preguntas frecuentes
+            </h1>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 

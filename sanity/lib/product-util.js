@@ -20,6 +20,7 @@ export async function getProductBySlug(slug) {
       "image": image.asset->url,
       "slug": slug.current,
       "extraImages": extraImages[].asset->url,
+      ref,
     }`,
     { slug },
     {
@@ -43,6 +44,7 @@ export async function getAllProducts() {
       "image": image.asset->url,
       "slug": slug.current,
       "extraImages": extraImages[].asset->url,
+      ref,
     }`,
     {
       next: {
@@ -65,6 +67,7 @@ export async function getProducts() {
       "image": image.asset->url,
       "slug": slug.current,
       "extraImages": extraImages[].asset->url,
+      ref,
     }`,
     { next: { revalidateTag: 1 } } // revalidate every hour
   );

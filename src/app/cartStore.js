@@ -37,10 +37,7 @@ const useCartStore = create((set) => ({
       } else {
         // If the product doesn't exist, add it to the cart with the new quantity
         return {
-          cart: [
-            ...state.cart,
-            { ...product, quantity: newQuantity, color: color },
-          ],
+          cart: [...state.cart, { ...product, quantity: newQuantity }],
           cartTotal: calculateCartTotal([
             ...state.cart,
             { ...product, quantity: newQuantity },
