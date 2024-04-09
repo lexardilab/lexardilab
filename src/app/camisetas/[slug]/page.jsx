@@ -4,7 +4,7 @@ import { getCamisetaBySlug } from "../../../../sanity/lib/camiseta-util";
 export default async function page({ params }) {
   const { slug } = params;
 
-  const product = await getCamisetaBySlug(slug);
+  const camiseta = await getCamisetaBySlug(slug);
 
   if (!camiseta) {
     return {

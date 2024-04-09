@@ -1,6 +1,6 @@
 export const product = {
   name: "product",
-  title: "Product",
+  title: "Products",
   type: "document",
   fields: [
     {
@@ -10,28 +10,21 @@ export const product = {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "description",
-      title: "Description",
-      type: "text",
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: "slug",
       title: "Slug",
       type: "slug",
       options: {
-        source: "title",
-        maxLength: 96,
+        source: "name", // Use the "name" field as the source for generating the slug
+        maxLength: 200, // Adjust the maximum length as needed
       },
       validation: (Rule) => Rule.required(),
     },
-
     {
       name: "image",
-      title: "Image",
+      title: "Main Image",
       type: "image",
       options: {
-        hotspot: true,
+        hotspot: true, // Allows selecting a hotspot for cropping
       },
       validation: (Rule) => Rule.required(),
     },
@@ -41,17 +34,66 @@ export const product = {
       type: "array",
       of: [{ type: "image" }],
     },
+
+    {
+      name: "description",
+      title: "Description",
+      type: "text",
+      validation: (Rule) => Rule.required(),
+    },
     {
       name: "price",
       title: "Price",
       type: "number",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().min(0),
     },
     {
       name: "ref",
       title: "Ref",
       type: "string",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().min(0),
+    },
+    {
+      name: "sku",
+      title: "Sku",
+      type: "string",
+    },
+    {
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: { type: "category" },
+        },
+      ],
+    },
+    {
+      name: "colors",
+      title: "Colors",
+      type: "array",
+      of: [
+        {
+          type: "string",
+          options: {
+            list: ["Opal", "Black", "Blue", "Heather Grey", "Natural"], // Add your color options
+          },
+        },
+      ],
+    },
+    {
+      name: "sizes",
+      title: "Sizes",
+      type: "array",
+      of: [
+        {
+          type: "string",
+          options: {
+            list: ["S", "M", "L", "XL", "XXL"], // Add your color options
+          },
+        },
+      ],
     },
   ],
 };

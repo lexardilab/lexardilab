@@ -4,7 +4,7 @@ function Card({ product }) {
   return (
     <>
       <div className="flex h-screen">
-        <Link href={`/details/${product?.slug}`}>
+        <Link href={`/productos/${product?.slug}`}>
           <div className="relative cursor-pointer">
             <img src={product?.image} width="800" height="600" alt="camiseta" />
             <div className="absolute bottom-1 left-1">

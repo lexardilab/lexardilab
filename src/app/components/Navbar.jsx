@@ -2,9 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
+import { AiOutlineShopping } from "react-icons/ai";
+import useCartStore from "../cartStore";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const totalItems = useCartStore((state) => state.totalItems);
   return (
     <nav className="flex items-center justify-between px-8 border-2 border-b border-black bg-slate-100">
       <div className="">
@@ -58,6 +60,45 @@ export default function Navbar() {
             </h1>
           </Link>
           <div className="border-t border-gray-600" />
+          <Link
+            href="/camiseta"
+            onClick={() =>
+              setTimeout(() => {
+                setOpen(!open);
+              }, 100)
+            }
+          >
+            <h1 className="pb-4 mt-4 text-2xl font-bold text-background">
+              Camisetas
+            </h1>
+          </Link>
+          <div className="border-t border-gray-600" />
+          <Link
+            href="/sudadera"
+            onClick={() =>
+              setTimeout(() => {
+                setOpen(!open);
+              }, 100)
+            }
+          >
+            <h1 className="pb-4 mt-4 text-2xl font-bold text-background">
+              Sudaderas
+            </h1>
+          </Link>
+          <div className="border-t border-gray-600" />
+          <Link
+            href="/accesorio"
+            onClick={() =>
+              setTimeout(() => {
+                setOpen(!open);
+              }, 100)
+            }
+          >
+            <h1 className="pb-4 mt-4 text-2xl font-bold text-background">
+              Accesorios
+            </h1>
+          </Link>
+          <div className="border-t border-gray-600" />
         </div>
         <div className="absolute left-12 bottom-6">
           <div>
@@ -81,8 +122,18 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center justify-end w-9/12">
+        <div className="relative">
+          <Link href="/cart">
+            <AiOutlineShopping className="text-3xl transition-transform duration-300 cursor-pointer hover:scale-125" />
+          </Link>
+          {totalItems > 0 && (
+            <div className="absolute flex items-center justify-center w-5 h-5 text-xs font-semibold text-white bg-red-500 rounded-full left-4 bottom-3">
+              {totalItems}
+            </div>
+          )}
+        </div>
         <div
-          className="z-50 flex flex-col items-center justify-between w-8 h-3 cursor-pointer"
+          className="z-50 flex flex-col items-center justify-between w-8 h-3 ml-4 cursor-pointer"
           onClick={() => {
             setOpen(!open);
           }}

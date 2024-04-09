@@ -21,6 +21,9 @@ export async function getProductBySlug(slug) {
       "slug": slug.current,
       "extraImages": extraImages[].asset->url,
       ref,
+      category,
+      colors,
+      sizes
     }`,
     { slug },
     {
@@ -45,6 +48,9 @@ export async function getAllProducts() {
       "slug": slug.current,
       "extraImages": extraImages[].asset->url,
       ref,
+      category,
+      colors,
+      sizes
     }`,
     {
       next: {
@@ -68,6 +74,9 @@ export async function getProducts() {
       "slug": slug.current,
       "extraImages": extraImages[].asset->url,
       ref,
+      category,
+      colors,
+      sizes
     }`,
     { next: { revalidateTag: 1 } } // revalidate every hour
   );

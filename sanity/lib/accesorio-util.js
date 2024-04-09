@@ -9,9 +9,9 @@ const client = createClient({
   useCdn: true,
 });
 
-export async function getCamisetaBySlug(slug) {
-  const camiseta = await client.fetch(
-    groq`*[_type == "camiseta" && slug.current == $slug]{
+export async function getAccesorioBySlug(slug) {
+  const accesorio = await client.fetch(
+    groq`*[_type == "accesorio" && slug.current == $slug]{
       _id,
       name,
       slug,
@@ -30,12 +30,12 @@ export async function getCamisetaBySlug(slug) {
     }
   );
 
-  return camiseta; // Assuming you expect a single product, not an array
+  return accesorio; // Assuming you expect a single product, not an array
 }
 
-export async function getAllCamisetas() {
-  const camisetas = await client.fetch(
-    groq`*[_type == "camiseta"]{
+export async function getAllAccesorios() {
+  const accesorios = await client.fetch(
+    groq`*[_type == "accesorio"]{
       _id,
       name,
       slug,
@@ -53,12 +53,12 @@ export async function getAllCamisetas() {
     }
   );
 
-  return camisetas;
+  return accesorios;
 }
 
-export async function getCamisetas() {
-  const camisetas = await client.fetch(
-    groq`*[_type == "camiseta"] |  [0...6] {
+export async function getAccesorios() {
+  const accesorios = await client.fetch(
+    groq`*[_type == "accesorio"] |  [0...6] {
       _id,
       name,
       slug,
@@ -72,5 +72,5 @@ export async function getCamisetas() {
     { next: { revalidateTag: 1 } } // revalidate every hour
   );
 
-  return camisetas;
+  return accesorios;
 }

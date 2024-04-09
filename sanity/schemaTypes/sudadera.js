@@ -47,5 +47,11 @@ export const sudadera = {
       type: "number",
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: "ref",
+      title: "Ref",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
   ],
 };
