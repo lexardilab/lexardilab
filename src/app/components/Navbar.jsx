@@ -8,7 +8,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const totalItems = useCartStore((state) => state.totalItems);
   return (
-    <nav className="flex items-center justify-between px-8 border-2 border-b border-black bg-slate-100">
+    <nav className="flex items-center justify-between px-8 border-b-2 border-black bg-slate-100">
       <div className="">
         <Link href="/">
           <Image
