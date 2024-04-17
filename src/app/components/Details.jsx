@@ -25,35 +25,6 @@ export default function Details({ product }) {
     });
     toast.success("Added to cart");
   };
-  const MyLink = React.forwardRef(
-    (
-      { as, children, href, replace, scroll, shallow, passHref, ...rest }, // extract all next/link props and pass the rest to the anchor tag
-      ref
-    ) => (
-      <Link as={as} href={href} passHref={passHref} replace={replace}>
-        <href {...rest} ref={ref}>
-          {children}
-        </href>
-      </Link>
-    )
-  );
-
-  const Arrow = () => {
-    const [isHovering, setIsHovered] = useState(false);
-    const onMouseEnter = () => setIsHovered(true);
-    const onMouseLeave = () => setIsHovered(false);
-    return (
-      <div
-        className="flex items-center flex-shrink-0 cursor-pointer"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        <MyLink href="/">
-          {isHovering ? <HiOutlinePlusSmall /> : <HiArrowSmallRight />}
-        </MyLink>
-      </div>
-    );
-  };
 
   return (
     <>
@@ -255,49 +226,6 @@ export default function Details({ product }) {
       <div className="grid grid-cols-2 pt-8">
         <div className="px-4 ">
           <h1 className="pr-6 font-mono text-xs">Ref: {product?.ref} </h1>
-        </div>
-
-        <div className="px-1 ">
-          <div className="flex items-center">
-            <span>
-              <Arrow />
-            </span>
-            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
-              Composición
-            </h1>
-          </div>
-          <div className="flex items-center">
-            <span>
-              <Arrow />
-            </span>
-            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
-              Descripción
-            </h1>
-          </div>
-          <div className="flex items-center">
-            <span>
-              <Arrow />
-            </span>
-            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
-              Guia de tallas
-            </h1>
-          </div>
-          <div className="flex items-center">
-            <span>
-              <Arrow />
-            </span>
-            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
-              Envios y devoluciones
-            </h1>
-          </div>
-          <div className="flex items-center">
-            <span>
-              <Arrow />
-            </span>
-            <h1 className="pl-1 font-mono text-xs uppercase hover:underline ">
-              Preguntas frecuentes
-            </h1>
-          </div>
         </div>
       </div>
     </>
