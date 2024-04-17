@@ -20,15 +20,23 @@ export default function ShopNavbar() {
         />
       </Link>
       <div className="flex items-center justify-center">
-        <h1 className={`${montserrat.className} px-4 font-bold text-xl`}>
+        <h1
+          className={`${montserrat.className} px-4 font-bold text-xl hover:underline`}
+        >
           Colección
         </h1>
-        <h1 className={`${montserrat.className} px-4 font-bold text-xl`}>
+        <h1
+          className={`${montserrat.className} px-4 font-bold text-xl hover:underline`}
+        >
           Marca
         </h1>
-        <h1 className={`${montserrat.className} px-4 font-bold text-xl`}>
-          Journal
-        </h1>
+        <Link href="/journal">
+          <h1
+            className={`${montserrat.className} px-4 font-bold text-xl hover:underline`}
+          >
+            Journal
+          </h1>
+        </Link>
       </div>
       <div className="flex items-center">
         <h1 className={`${roboto_mono.className} px-4  text-xs`}>Newsletter</h1>
