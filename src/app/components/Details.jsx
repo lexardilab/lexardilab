@@ -302,3 +302,4 @@ export default function Details({ product }) {
     </>
   );
 }
+Details.displayName = "Details";
