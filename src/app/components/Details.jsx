@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 import { HiOutlinePlusSmall } from "react-icons/hi2";
 import { HiArrowSmallRight } from "react-icons/hi2";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Details({ product }) {
   const [selectedImage, setSelectedImage] = useState(product?.image);
@@ -58,9 +59,9 @@ export default function Details({ product }) {
     <>
       <div className="grid grid-cols-4 px-4">
         <div className="flex">
-          <img src={selectedImage} width="800" height="600" alt="producto" />
+          <Image src={selectedImage} width="800" height="600" alt="producto" />
           {product?.extraImages?.map((image) => (
-            <img src={image} width="800" height="600" alt="Gallery" />
+            <Image src={image} width="800" height="600" alt="Gallery" />
           ))}
         </div>
       </div>
