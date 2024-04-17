@@ -6,7 +6,7 @@ import { HiOutlinePlusSmall } from "react-icons/hi2";
 import { HiArrowSmallRight } from "react-icons/hi2";
 import Link from "next/link";
 
-function Details({ product }) {
+export default function Details({ product }) {
   const [selectedImage, setSelectedImage] = useState(product?.image);
   const [selectedColor, setSelectedColor] = useState(product?.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product?.sizes[0]);
@@ -302,5 +302,3 @@ function Details({ product }) {
     </>
   );
 }
-
-export default Details;

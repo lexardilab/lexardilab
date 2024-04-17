@@ -6,7 +6,7 @@ import { HiOutlinePlusSmall } from "react-icons/hi2";
 import { HiArrowSmallRight } from "react-icons/hi2";
 import Link from "next/link";
 
-function Accesorio({ accesorio }) {
+export default function Accesorio({ accesorio }) {
   const [selectedImage, setSelectedImage] = useState(accesorio?.image);
 
   //const cart = useCartStore((state) => state.cart);
@@ -128,5 +128,3 @@ function Accesorio({ accesorio }) {
     </>
   );
 }
-
-export default Accesorio;
