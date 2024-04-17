@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { montserrat, roboto_mono } from "../utils/fonts";
 function Card({ product }) {
   return (
     <>
@@ -13,11 +13,15 @@ function Card({ product }) {
               height="600"
               alt="camiseta"
             />
-            <div className="absolute bottom-1 left-1">
-              <h1 className="text-base font-semibold ">{product?.name}</h1>
+            <div className="absolute pb-6 bottom-1 left-1">
+              <h1 className={`${roboto_mono.className} px-4  text-sm`}>
+                {product?.name}
+              </h1>
             </div>
-            <div className="absolute bottom-1 right-1">
-              <h1 className="text-base font-semibold ">{product?.price} €</h1>
+            <div className="absolute bottom-1 left-1">
+              <h1 className={`${roboto_mono.className} px-4  text-sm`}>
+                {product?.price} €
+              </h1>
             </div>
           </div>
         </Link>

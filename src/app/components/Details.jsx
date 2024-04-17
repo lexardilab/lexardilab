@@ -2,10 +2,8 @@
 import React, { useState } from "react";
 import useCartStore from "../cartStore";
 import { toast } from "react-hot-toast";
-import { HiOutlinePlusSmall } from "react-icons/hi2";
-import { HiArrowSmallRight } from "react-icons/hi2";
-import Link from "next/link";
 import Image from "next/image";
+import { montserrat, roboto_mono } from "../utils/fonts";
 
 export default function Details({ product }) {
   const [selectedImage, setSelectedImage] = useState(product?.image);
@@ -37,21 +35,15 @@ export default function Details({ product }) {
         </div>
       </div>
       <div className="grid grid-cols-2 py-2">
-        <div className="flex items-center px-4">
-          <h1 className="pr-12 text-4xl font-bold uppercase">
+        <div className="flex items-center justify-between px-4">
+          <h1
+            className={`${montserrat.className} pr-12 text-4xl font-bold uppercase`}
+          >
             {product?.name}
           </h1>
-          <span className="text-4xl text-right">{product?.price} €</span>
-        </div>
-
-        <div className="flex justify-end px-4">
-          <button className="text-2xl " onClick={handleAddToCart}>
-            Añadir a la cesta
-          </button>
-        </div>
-      </div>
-      <div className="grid grid-cols-3">
-        <div className="flex items-center px-4 pt-6">
+          <span className={`${roboto_mono.className} px-4  text-4xl`}>
+            {product?.price} €
+          </span>
           <div className="flex items-center space-x-3">
             <h1 className="text-xs text-right ">Color:</h1>
             {product?.colors?.map((color) => {
@@ -207,22 +199,27 @@ export default function Details({ product }) {
                 }
               })}
             </div>
+            <div className="flex items-center justify-center pl-6 space-x-3">
+              <label className="text-xs" htmlFor="">
+                Cantidad:
+              </label>
+              <input
+                type="number"
+                value={qty}
+                onChange={(e) => setQty(e.target.value)}
+                className="w-20 h-10 px-4 border border-gray-300 rounded-md"
+              />
+            </div>
           </div>
-          <div className="flex items-center justify-center pl-6 space-x-3">
-            <label className="text-xs" htmlFor="">
-              Cantidad:
-            </label>
-            <input
-              type="number"
-              value={qty}
-              onChange={(e) => setQty(e.target.value)}
-              className="w-20 h-10 px-4 border border-gray-300 rounded-md"
-            />
-          </div>
+          <div className="flex justify-end px-1"></div>
         </div>
-
-        <div className="flex justify-end px-1"></div>
+        <div className="flex justify-end px-4">
+          <button className="text-2xl " onClick={handleAddToCart}>
+            Añadir a la cesta
+          </button>
+        </div>
       </div>
+
       <div className="grid grid-cols-2 pt-8">
         <div className="px-4 ">
           <h1 className="pr-6 font-mono text-xs">Ref: {product?.ref} </h1>
