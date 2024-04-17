@@ -69,7 +69,7 @@ function Cart() {
       <div className="w-2/3 border-collapse ">
         <div>
           <div className="grid grid-cols-4 px-6 border-b border-gray-200">
-            <div className="bg-red-200">
+            <div className="">
               <h1 className="">Articulo</h1>
               <div className="">
                 {cart?.map((product) => (
@@ -107,12 +107,48 @@ function Cart() {
             </div>
             <div className="bg-blue-200">
               <h1 className="">Cantidad</h1>
+              <div className="">
+                {cart?.map((product) => (
+                  <div
+                    key={product?._id}
+                    className="flex space-x-48 border-b border-gray-300"
+                  >
+                    <h1 className="px-4 py-2">{product?.quantity}</h1>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="bg-orange-200">
               <h1 className="">Precio</h1>
+              <div className="">
+                {cart?.map((product) => (
+                  <div
+                    key={product?._id}
+                    className="flex space-x-48 border-b border-gray-300"
+                  >
+                    <h1 className="px-4 py-2 text-center">
+                      {product?.price} €
+                    </h1>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="bg-slate-200">
               <h1 className="">Eliminar</h1>
+              <div className="">
+                {cart?.map((product) => (
+                  <div key={product?._id} className="flex space-x-48 border-b ">
+                    <h1 className="px-4 py-2">
+                      <HiX
+                        onClick={() => {
+                          handleRemoveFromCart(product?._id);
+                        }}
+                        className="mx-auto cursor-pointer "
+                      />
+                    </h1>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

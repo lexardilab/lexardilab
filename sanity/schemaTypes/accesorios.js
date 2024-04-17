@@ -1,6 +1,6 @@
 export const Accesorios = {
   name: "accesorios",
-  title: "Accesorios",
+  title: "Accesorio",
   type: "document",
   fields: [
     {
@@ -45,6 +45,12 @@ export const Accesorios = {
       name: "price",
       title: "Price",
       type: "number",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "ref",
+      title: "Ref",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
   ],
