@@ -6,7 +6,7 @@ import { HiOutlinePlusSmall } from "react-icons/hi2";
 import { HiArrowSmallRight } from "react-icons/hi2";
 import Link from "next/link";
 
-function Camiseta({ camiseta }) {
+export default function Camiseta({ camiseta }) {
   const [selectedImage, setSelectedImage] = useState(camiseta?.image);
 
   //const cart = useCartStore((state) => state.cart);
@@ -132,5 +132,3 @@ function Camiseta({ camiseta }) {
     </>
   );
 }
-
-export default Camiseta;
