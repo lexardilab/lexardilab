@@ -6,7 +6,7 @@ import { HiOutlinePlusSmall } from "react-icons/hi2";
 import { HiArrowSmallRight } from "react-icons/hi2";
 import Link from "next/link";
 
-function Details({ sudadera }) {
+function Sudadera({ sudadera }) {
   const [selectedImage, setSelectedImage] = useState(sudadera?.image);
 
   //const cart = useCartStore((state) => state.cart);
@@ -129,4 +129,4 @@ function Details({ sudadera }) {
   );
 }
 
-export default Details;
+export default Sudadera;
