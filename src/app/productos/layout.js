@@ -1,4 +1,4 @@
-import ShopNavbar from "../components/ShopNAvbar";
+import ShopNavbar from "../components/ShopNavbar";
 import "../globals.css";
 
 export const metadata = {

@@ -114,7 +114,7 @@ export default function Navbar() {
           <div>
             <Link href="mailto:lexardi.lab@gmail.com">
               <p className="text-xl font-bold font-mont">
-                kaixo@lexardilab.com{" "}
+                kaixo@lexardilab.com
               </p>
             </Link>
           </div>
