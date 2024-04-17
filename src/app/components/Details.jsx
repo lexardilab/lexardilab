@@ -38,10 +38,10 @@ export default function Details({ product }) {
       </div>
       <div className="grid grid-cols-2 py-2">
         <div className="flex items-center px-4">
-          <h1 className="pr-12 text-2xl">{product?.name}</h1>
-          <span className="font-mono text-4xl text-right">
-            {product?.price} €
-          </span>
+          <h1 className="pr-12 text-4xl font-bold uppercase">
+            {product?.name}
+          </h1>
+          <span className="text-4xl text-right">{product?.price} €</span>
         </div>
 
         <div className="flex justify-end px-4">

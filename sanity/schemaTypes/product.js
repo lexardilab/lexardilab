@@ -90,7 +90,7 @@ export const product = {
         {
           type: "string",
           options: {
-            list: ["S", "M", "L", "XL", "XXL"], // Add your color options
+            list: ["S", "M", "L", "XL", "XXL", "Unica"], // Add your color options
           },
         },
       ],
