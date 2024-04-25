@@ -38,6 +38,24 @@ export const product = {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "secondimage",
+      title: "Second Image",
+      type: "image",
+      options: {
+        hotspot: true, // Allows selecting a hotspot for cropping
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "thirdimage",
+      title: "Third Image",
+      type: "image",
+      options: {
+        hotspot: true, // Allows selecting a hotspot for cropping
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "extraImages",
       title: "Extra Images",
       type: "array",
@@ -47,6 +65,12 @@ export const product = {
     {
       name: "description",
       title: "Description",
+      type: "text",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "descriptionOne",
+      title: "Description One",
       type: "text",
       validation: (Rule) => Rule.required(),
     },
@@ -66,43 +90,6 @@ export const product = {
       name: "sku",
       title: "Sku",
       type: "string",
-    },
-    {
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [
-        {
-          type: "reference",
-          to: { type: "category" },
-        },
-      ],
-    },
-    {
-      name: "colors",
-      title: "Colors",
-      type: "array",
-      of: [
-        {
-          type: "string",
-          options: {
-            list: ["Opal", "Black", "Blue", "Heather Grey", "Natural", "Aloe"], // Add your color options
-          },
-        },
-      ],
-    },
-    {
-      name: "sizes",
-      title: "Sizes",
-      type: "array",
-      of: [
-        {
-          type: "string",
-          options: {
-            list: ["S", "M", "L", "XL", "XXL", "Unica"], // Add your color options
-          },
-        },
-      ],
     },
   ],
 };
