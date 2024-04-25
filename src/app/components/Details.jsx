@@ -45,16 +45,7 @@ export default function Details({ product }) {
           />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-1 px-4">
-        {product?.extraImages?.map((image) => (
-          <Image
-            src={image}
-            width="800"
-            height="600"
-            alt="Camiseta Axpea Lexardi"
-          />
-        ))}
-      </div>
+
       <div className="pt-2 pb-6">
         <Image
           src={product?.thirdimage}
