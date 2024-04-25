@@ -29,6 +29,15 @@ export const product = {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "firstimage",
+      title: "First Image",
+      type: "image",
+      options: {
+        hotspot: true, // Allows selecting a hotspot for cropping
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "extraImages",
       title: "Extra Images",
       type: "array",
@@ -77,7 +86,7 @@ export const product = {
         {
           type: "string",
           options: {
-            list: ["Opal", "Black", "Blue", "Heather Grey", "Natural"], // Add your color options
+            list: ["Opal", "Black", "Blue", "Heather Grey", "Natural", "Aloe"], // Add your color options
           },
         },
       ],

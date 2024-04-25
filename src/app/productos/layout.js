@@ -2,7 +2,7 @@ import "../globals.css";
 import ShopNavbar from "../components/ShopNavbar";
 
 export const metadata = {
-  title: "Lexardi Lab | Journal",
+  title: "Lexardi Lab | Tienda",
   description: "Lexardi is laboratory of ideas",
 };
 
