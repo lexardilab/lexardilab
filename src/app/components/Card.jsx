@@ -4,7 +4,7 @@ import { montserrat, roboto_mono } from "../utils/fonts";
 function Card({ product }) {
   return (
     <>
-      <div className="flex h-screen">
+      <div className="flex px-4">
         <Link href={`/productos/${product?.slug}`}>
           <div className="relative cursor-pointer">
             <Image

@@ -19,15 +19,12 @@ export async function getProductBySlug(slug) {
       descriptionOne,
       price,
       "image": image.asset->url,
-      "firstimage": image.asset->url,
-      "secondimage": image.asset->url,
-      "thirdimage": image.asset->url,
+      "firstimage": firstimage.asset->url,
+      "secondimage": secondimage.asset->url,
+      "thirdimage": thirdimage.asset->url,
       "slug": slug.current,
       "extraImages": extraImages[].asset->url,
       ref,
-      category,
-      colors,
-      sizes
     }`,
     { slug },
     {
@@ -50,15 +47,12 @@ export async function getAllProducts() {
       descriptionOne,
       price,
       "image": image.asset->url,
-      "firstimage": image.asset->url,
-      "secondimage": image.asset->url,
-      "thirdimage": image.asset->url,
+      "firstimage": firstimage.asset->url,
+      "secondimage": secondimage.asset->url,
+      "thirdimage": thirdimage.asset->url,
       "slug": slug.current,
       "extraImages": extraImages[].asset->url,
       ref,
-      category,
-      colors,
-      sizes
     }`,
     {
       next: {
@@ -80,15 +74,12 @@ export async function getProducts() {
       descriptionOne,
       price,
       "image": image.asset->url,
-      "firstimage": image.asset->url,
-      "secondimage": image.asset->url,
-      "thirdimage": image.asset->url,
+      "firstimage": firstimage.asset->url,
+      "secondimage": secondimage.asset->url,
+      "thirdimage": thirdimage.asset->url,
       "slug": slug.current,
       "extraImages": extraImages[].asset->url,
       ref,
-      category,
-      colors,
-      sizes
     }`,
     { next: { revalidateTag: 1 } } // revalidate every hour
   );
