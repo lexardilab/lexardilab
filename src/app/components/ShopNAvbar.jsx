@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { montserrat, roboto_mono } from "../utils/fonts";

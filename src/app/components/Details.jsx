@@ -1,7 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import useCartStore from "../cartStore";
-import { toast } from "react-hot-toast";
 import Image from "next/image";
 import { montserrat, roboto_mono } from "../utils/fonts";
 

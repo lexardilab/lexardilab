@@ -1,5 +1,4 @@
 import "../globals.css";
-import ShopNavbar from "../components/ShopNavbar";
 
 export const metadata = {
   title: "Lexardi Lab | Journal",
@@ -9,10 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body>
-        <ShopNavbar />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
