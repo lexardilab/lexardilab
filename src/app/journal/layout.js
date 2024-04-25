@@ -1,8 +1,8 @@
-import "./globals.css";
-import ShopNavbar from "./components/ShopNavbar";
+import "../globals.css";
+import ShopNavbar from "../components/ShopNavbar";
 
 export const metadata = {
-  title: "Lexardi Lab",
+  title: "Lexardi Lab | Journal",
   description: "Lexardi is laboratory of ideas",
 };
 
