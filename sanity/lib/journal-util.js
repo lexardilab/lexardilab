@@ -5,7 +5,7 @@ const client = createClient({
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   title: "Lexardi Lab",
   apiVersion: "2023-11-21",
-  token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
+  token: process.env.SANITY_API_READ_TOKEN,
   useCdn: false,
 });
 
