@@ -23,7 +23,7 @@ export default function Navbar() {
         >
           Marca
         </h1>
-        <Link href="/blog">
+        <Link href="/journal">
           <h1
             className={`${montserrat.className} px-4 font-bold text-xl hover:underline cursor-pointer`}
           >
