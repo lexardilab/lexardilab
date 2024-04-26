@@ -6,7 +6,7 @@ const client = createClient({
   title: "Lexardi Lab",
   apiVersion: "2023-11-21",
   token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
-  useCdn: true,
+  useCdn: false,
 });
 
 export async function getJournalBySlug(slug) {
