@@ -1,6 +1,5 @@
-import { journal } from "./schemaTypes/journal";
-import { product } from "./schemaTypes/product";
+import { post } from "./schemaTypes/post";
 
 export const schema = {
-  types: [product, journal],
+  types: [post],
 };
